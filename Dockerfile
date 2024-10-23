@@ -12,5 +12,8 @@ RUN apt-get update && \
 # Run the command to install sshx
 RUN curl -sSf https://sshx.io/get | sh -s run
 
-# Specify the command to run when the container starts (if needed)
-CMD ["bash"]
+# Expose the port that sshx uses (default is usually 22 or 443, adjust if necessary)
+EXPOSE 22  # or another port based on your sshx configuration
+
+# Command to start sshx (ensure you use the correct command)
+CMD ["sshx", "run"]
